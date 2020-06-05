@@ -1,5 +1,20 @@
 # COMP5347_Assignment_2
-Repository of Group 4 for COMP5437 Assignment 2.
+## Introduction
+This repository of is a group work of Group 4 for Assignment 2 of COMP5437 from the University of Sydney.
+
+Coded by the following three members:
+- Chenghao Li : The controllers and the majority of front-end JS.
+- Zidong Li: The views of front-end design and the JS of charts and other interactions.
+- Limou Zhou: The models including all database query methods.
+
+Be noticed that the credit of this proejct belongs to all three team members.
+
+## Install dependencies
+```
+npm install
+```
+There may be one package missing in the package.json, please add it yourself.
+
 ## Start DB
 ### Batch script
 start_db_server.bat
