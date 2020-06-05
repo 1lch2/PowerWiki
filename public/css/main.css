@@ -1,0 +1,28 @@
+body,
+nav ul li,
+nav ul a,
+nav .brand-logo {
+    color: rgba(20, 4, 4, 0.534);
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+img {
+    width: 350px;
+    height: 300px;
+}
+
+table,
+.content-font {
+    color: black;
+}
+
+.caption-font {
+    color: black;
+    font-weight: bold;
+}

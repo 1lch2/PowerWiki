@@ -1,0 +1,31 @@
+body {
+    /* background: url('https://unsplash.it/1200/800/?random'); */
+    background: url(/images/computer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0em);
+    }
+}
+
+.container {
+    width: 600px;
+    border: 1px solid #26a69a;
+    padding: 20px 30px;
+    background: rgb(243, 245, 246);
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+
+.tabs {
+    background: inherit;
+}
