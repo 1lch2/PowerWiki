@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <title>Login & Sign up</title>
+</head>
+
+<body>
+<!-- reset page -->
+<div id="resetModal" class="modal">
+    <div class="modal-content">
+        <form action="">
+            <div class="section">
+                    <span class="teal-text">
+                            <h5>Reset your password</h5>
+                        </span>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="reset_email" type="email" class="validate" required/>
+                    <label for="reset_email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select id="reset_questions">
+                        <option value="1">What's your favourite food?</option>
+                        <option value="2">Where are you from?</option>
+                    </select>
+                    <label>Security question</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" id="reset_answer" class="validate" required/>
+                    <label for="reset_answer">Your Answer</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="password" id="original" class="validate" required/>
+                    <label for="original">Original password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="password" id="new_pass" class="validate" required/>
+                    <label for="new_pass">New password</label>
+                    <span class="helper-text" data-error="6 characters minimum" data-success="6 characters minimum">6 characters minimum</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <a class="btn waves-effect waves-light" type="submit" id="reset-confirm">
+                        Confirm
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- login & signup page -->
+<div class="container">
+    <ul class="tabs">
+        <li class="tab col s12">
+            <a href="#in">
+                Sign in
+            </a>
+        </li>
+        <li class="tab col s12">
+            <a href="#up">
+                Sign up
+            </a>
+        </li>
+    </ul>
+    <div id="in">
+        <form action="#">
+            <div class="section">
+                    <span class="teal-text">
+                        <h5>Log in with your account!</h5>
+                    </span>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" required/>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" required/>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <a href="#resetModal" class="modal-trigger">
+                        <span class="teal-text">Reset password?</span></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <a class="btn waves-effect waves-light" name="action" id="signin">Sign in
+                        <i class="material-icons right">send</i>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="up">
+        <form action="#">
+            <div class="section">
+                    <span class="teal-text">
+                        <h5>Get a new account!</h5>
+                    </span>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="re_email" type="email" class="validate" required/>
+                    <label for="re_email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="firstname" type="text" class="validate" required/>
+                    <label for="firstname">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="lastname" type="text" class="validate" required/>
+                    <label for="lastname">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select id="questions">
+                        <option value="1">What's your favourite food?</option>
+                        <option value="2">Where are you from?</option>
+                    </select>
+                    <label>Security question</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" id="answer" class="validate" required/>
+                    <label for="answer">Your Answer</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="re_password" type="password" class="validate" required/>
+                    <label for="re_password">Password</label>
+                    <span class="helper-text" data-error="6 characters minimum" data-success="6 characters minimum">6 characters minimum</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <a class="btn waves-effect waves-light" type="submit" id="signup">Sign up and log in
+                        <i class="material-icons right">send</i>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/materialize.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+</body>
+
+</html>

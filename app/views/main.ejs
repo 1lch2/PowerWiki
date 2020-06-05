@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>PowerWiki</title>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="teal" role="navigation">
+            <div class="nav-wrapper container">
+                <a href="#main" id="logo" class="brand-logo white-text"><i class="large material-icons">explore</i>Powerwiki</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a id="overall" href="#overall_part" class="white-text">Overall</a></li>
+                    <li><a id="individual" href="#individual_part" class="white-text">Individual</a></li>
+                    <li><a id="author" href="#author_part" class="white-text">Author</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- welcome page -->
+    <div id="main">
+        <div class="section" id="intro">
+            <div class="container">
+                <h3 class="center teal-text">Powerwiki is an analytic tool for Wikipedia</h3>
+                <div class="row center">
+                    <h5 class="col s12">Developed with NodeJS and MongoDB</h5>
+                    <h5 class="col s12">PowerWiki is your choice for analysis</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h5 class="center">Overall Analytics</h5>
+                        <!-- put sample chart picture here -->
+                        <img class="materialboxed" src="images/distribution1.png">
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h5 class="center">Individual Analytics</h5>
+                        <!-- put sample chart here -->
+                        <img class="materialboxed" src="images/distribution2.png">
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h5 class="center">Author Analytics</h5>
+                        <!-- put sample chart here -->
+                        <img class="materialboxed" src="images/author.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="overall_part">
+        <div class="container">
+            <h5 class="header teal-text">Overall analysis</h5>
+            <div class="row">
+                <form id="title_number" action="">
+                    <div class="section">
+                        <h7 class="teal-text">Number of titles displayed:</h7>
+                    </div>
+                    <div class="input-field col s3">
+                        <input id="titlenum" name="titlenum" type="number" min="1" value="2">
+                    </div>
+                    <div class="input-field col s6">
+                        <button class="btn waves-effect waves-light" type="button" id="numOfTitle">
+                            GO
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <h5 class="header teal-text">Titles with largest & lowest number of revisions</h5>
+                <div class="col s6">
+                    <h6 class="teal-text">Largest</h6>
+                    <!-- Table -->
+                    <div id="highestRev"></div>
+                </div>
+                <div class="col s6">
+                    <h6 class="teal-text">Lowest</h6>
+                    <!-- Table -->
+                    <div id="lowestRev"></div>
+                </div>
+            </div>
+            <div class="row">
+                <h5 class="header teal-text">Articles edited by largest & Smallest groups of users</h5>
+                <div class="col s6">
+                    <h6 class="teal-text">Largest</h6>
+                    <!-- Table -->
+                    <div id="largestGroup"></div>
+                </div>
+                <div class="col s6">
+                    <h6 class="teal-text">Lowest</h6>
+                    <!-- Table -->
+                    <div id="smallestGroup"></div>
+                </div>
+            </div>
+            <div class="row">
+                <h5 class="header teal-text">Articles with longest & shortest age</h5>
+                <div class="col s6">
+                    <h6 class="teal-text">Longest Age</h6>
+                    <!-- Table -->
+                    <div id="longestAge"></div>
+                </div>
+                <div class="col s6">
+                    <h6 class="teal-text">Shortest Age</h6>
+                    <!-- Table -->
+                    <div id="shortestAge"></div>
+                </div>
+            </div>
+            <!-- overall analysis chart -->
+            <h5 class="header teal-text">Distribution Charts</h5>
+            <div class="row">
+                <h5 class="teal-text">Bar chart of revision number distribution by year and by user type</h5>
+                <a href="javascript:void(0)" id="userYearDistributionBar" class="teal-text">Show</a>
+                <h5 class="teal-text">Pie chart of revision number distribution by user type</h5>
+                <a href="javascript:void(0)" id="userDistributionPie" class="teal-text">Show</a>
+
+                <!-- output -->
+                <div id="overallChart"></div>
+            </div>
+        </div>
+    </div>
+    <div id="individual_part">
+        <div class="container">
+            <div class="row">
+                <div class="section">
+                    <h5 class="teal-text">Individual analysis</h5>
+                </div>
+                <h6 class="teal-text">Top 5 user of article</h6>
+                <div class="row">
+                    <div class="input-field col s8">
+                        <select id="selected_article"></select>
+                    </div>
+                    <div class="input-field col s4">
+                        <button class="btn waves-effect waves-light" id="searchArticle" type="button">
+                            Search
+                        </button>
+                    </div>
+                </div>
+                <!-- wiki output -->
+                <div id="updateData"></div>
+                <div id="titleplace"></div>
+                <div id="topFiveUser"></div>
+                <div id="posts"></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- individual analysis chart -->
+            <h5 class="header teal-text">Distribution Charts</h5>
+            <div class="row">
+                <h5 class="teal-text">Bar chart of revision number distribution by year and by user type</h5>
+                <a href="javacript:void(0)" id="showDistributionBar" class="teal-text">Show</a>
+                <h5 class="teal-text">Pie chart of revision number distribution based on user type</h5>
+                <a href="javacript:void(0)" id="showDistributionPie" class="teal-text">Show</a>
+                <h5 class="teal-text">Bar chart of revision number distributed by year</h5>
+                <div id="selectUser" class="row">
+                    <div class="input-field col s6">
+                        <select id="select_top_user"></select>
+                        <label>Select a user</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <a href="javacript:void(0)" id="distributionBarByUser" class="teal-text">Show</a>
+                </div>
+
+                <!-- output -->
+                <div id="individualChart"></div>
+            </div>
+        </div>
+    </div>
+    <div id="author_part">
+        <div class="container">
+            <div class="row">
+                <div class="section">
+                    <span class="teal-text">
+                        <h5>Author analysis</h5>
+                    </span>
+                </div>
+                <form action="" id="authorForm">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="username" name="username" type="text" class="autocomplete">
+                            <label for="username">Please input a username</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <button class="btn waves-effect waves-light" id="authorSearch" type="button">GO</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- author analysis output -->
+                <div id="showUserArticle">
+                    <ul id="collapsibleArticle" class="collapsible popout"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" class="footer-copyright teal">
+            <div class="container center">
+                Made by Web_Dev_4
+            </div>
+        </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+        <script type="text/javascript" src="js/overall_analytic.js"></script>
+        <script type="text/javascript" src="js/individual_analytics.js"></script>
+        <script type="text/javascript" src="js/author_analytics.js"></script>
+    </div>
+</body>
+
+</html>
