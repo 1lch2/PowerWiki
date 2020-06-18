@@ -1,0 +1,7 @@
+# Node packages
+node_modules/
+package-lock.json
+
+# Idea config files
+/.idea
+public/data
